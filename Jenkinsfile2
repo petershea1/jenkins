@@ -14,7 +14,7 @@ pipeline {
         stage('Apply') { 
             steps {
                 sh 'echo "Deploying..."'
-                sh './terraformw apply -auto-approve -no-color'
+                sh './terraform apply -auto-approve -no-color'
             }
         }
     }
