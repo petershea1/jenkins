@@ -6,15 +6,16 @@ pipeline {
                 sh 'echo "Building..."'
             }
         }
-        stage('Test') { 
+        stage('Init') { 
             steps {
                 sh 'echo "Testing..."'
-                sh "./terraform apply"
+                sh "./terraform init"
             }
         }
-        stage('Deploy') { 
+        stage('Apply') { 
             steps {
                 sh 'echo "Deploying..."'
+                sh "./terraform apply"
             }
         }
     }
